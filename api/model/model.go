@@ -4,7 +4,7 @@ import (
 	"github.com/jmoiron/sqlx"
 )
 
-// DBPool datbase connection pool
+// DBPool database connection pool
 type DBPool struct {
 	Master *sqlx.DB
 	Slave  *sqlx.DB
