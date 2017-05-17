@@ -9,14 +9,14 @@ import (
 	"github.com/spf13/viper"
 )
 
-// CaseOne 기본적으로 필요로하는 의존성 객체들
+// CaseOne default app dependency objects
 type CaseOne struct {
 	Env      *viper.Viper
 	DBReader *sqlx.DB
 	DBWriter *sqlx.DB
 }
 
-// NewConfig 환경설정 생성
+// NewConfig set environment values
 func NewConfig(env string) *viper.Viper {
 	config := viper.New()
 	pwd, _ := os.Getwd()
@@ -46,7 +46,7 @@ func NewConfig(env string) *viper.Viper {
 	return config
 }
 
-// ConnectDB db 커넷션 객체 생성
+// ConnectDB create database connection
 func ConnectDB(host string, env *viper.Viper) *sqlx.DB {
 	driver := "mysql"
 	switch host {
@@ -67,7 +67,7 @@ func ConnectDB(host string, env *viper.Viper) *sqlx.DB {
 	return sess
 }
 
-//NewCaseOne 기본적으로 생성되는 프로그램 설정 객체
+//NewCaseOne create default configuration object
 func NewCaseOne(mode string) *CaseOne {
 	if mode == "" {
 		mode = os.Getenv("APP_ENV")

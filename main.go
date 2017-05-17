@@ -40,7 +40,7 @@ func main() {
 	server := &http.Server{
 		Addr:           env.GetString("Listen"),
 		Handler:        r,
-		ReadTimeout:    120 * time.Second,
+		ReadTimeout:    10 * time.Second,
 		WriteTimeout:   35 * time.Second,
 		MaxHeaderBytes: 1 << 20,
 	}

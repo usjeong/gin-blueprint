@@ -10,12 +10,11 @@ import (
 	"github.com/usjeong/gin-blueprint/api"
 )
 
-// App app 객체
+// App inject configuration
 type App struct {
 	Env *viper.Viper
 }
 
-// App Http서버 객체
 var (
 	app *App
 	db  *model.DBPool
@@ -29,9 +28,9 @@ func SetRouter(router *gin.Engine) {
 	}
 }
 
-// NewApp Http서버 객체 생성
+// NewApp create app
 func NewApp(caseOne *conf.CaseOne) {
-	log.Println("init Qush app")
+	log.Println("init app")
 	app = &App{
 		Env: caseOne.Env,
 	}
