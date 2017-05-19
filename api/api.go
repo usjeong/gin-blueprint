@@ -3,11 +3,9 @@ package api
 import (
 	"log"
 
-	"quicket.co.kr/qush/api/model"
-	"quicket.co.kr/qush/conf"
-
 	"github.com/gin-gonic/gin"
-	"github.com/usjeong/gin-blueprint/api"
+	"github.com/usjeong/gin-blueprint/api/model"
+	"github.com/usjeong/gin-blueprint/conf"
 )
 
 // App inject configuration
@@ -24,7 +22,7 @@ var (
 func SetRouter(router *gin.Engine) {
 	topic := router.Group("topic")
 	{
-		topic.GET("/ping", api.PingContext)
+		topic.GET("/ping", PingContext)
 	}
 }
 
