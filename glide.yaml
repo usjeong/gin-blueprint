@@ -9,8 +9,6 @@ import:
 - package: github.com/spf13/viper
 - package: gopkg.in/gin-contrib/cors.v1
   version: ~1.2.0
-- package: quicket.co.kr/qush/api/model
-- package: quicket.co.kr/qush/conf
 testImport:
 - package: github.com/stretchr/testify
   version: ~1.1.4
